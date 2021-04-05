@@ -26,29 +26,9 @@ export class DocumentComponent implements OnInit, AfterViewInit {
       path: '../lib',
       initialDoc: '../files/test_four_fields.pdf',
       css: 'app/webviewer.css',
+      ui: 'default'
     }, this.viewer.nativeElement).then(instance => {
       this.wvInstance = instance;
-
-      // Update Icon
-      instance.updateElement('stickyToolGroupButton', {
-        img: '/assets/img/icon-addcomment_idle.svg',
-        title: 'Add Comment'
-      });
-
-      // Update header items
-      // instance.setHeaderItems((header) => {
-      //   // get the tools overlay
-      //   const stickyToolGroupButton = header.getHeader('toolbarGroup-Annotate').get('stickyToolGroupButton');
-      //   header.getHeader('toolbarGroup-Annotate').update([
-      //     {
-      //       type: 'spacer'
-      //     },
-      //     stickyToolGroupButton,
-      //     {
-      //       type: 'spacer'
-      //     }
-      //   ]);
-      // });
 
       // now you can access APIs through this.webviewer.getInstance()
       instance.openElements(['notesPanel']);
